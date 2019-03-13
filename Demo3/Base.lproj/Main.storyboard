@@ -1,24 +1,2093 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.59" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tm9-2Q-jJb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.45"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--烏野高中-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Demo3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="烏野" translatesAutoresizingMaskIntoConstraints="NO" id="9gj-57-ODm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="236"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="236" id="60e-T0-IzB"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaQ-aC-sbq">
+                                <rect key="frame" x="0.0" y="579" width="375" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.88765454292297363" green="0.58422303199768066" blue="0.32149842381477356" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="查看人物">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Qpx-Pp-vzt" kind="show" id="XfW-2Q-L4C"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3v-HL-zp1">
+                                <rect key="frame" x="49" y="380" width="276" height="101.5"/>
+                                <string key="text">位於宮城縣的縣立高中
+曾經有著全國級的實力
+但5年前開始衰退
+因而稱其為
+「沒落的強豪——無法飛翔的烏鴉」</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9gj-57-ODm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4CM-me-a90"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9gj-57-ODm" secondAttribute="trailing" id="cHP-md-sFt"/>
+                            <constraint firstItem="v3v-HL-zp1" firstAttribute="top" secondItem="9gj-57-ODm" secondAttribute="bottom" constant="80" id="efR-gX-9Pg"/>
+                            <constraint firstItem="9gj-57-ODm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ogg-Ng-WcR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="烏野高中" id="9zF-j6-8Hc">
+                        <barButtonItem key="backBarButtonItem" title=" " id="XDb-Kx-SH2"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1932" y="27.436281859070466"/>
+        </scene>
+        <!--角色列表-->
+        <scene sceneID="cRC-E8-2tG">
+            <objects>
+                <tableViewController id="Qpx-Pp-vzt" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4PP-ZU-Nja">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.94333755969999999" green="0.80949666409999999" blue="0.60178917949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <sections>
+                            <tableViewSection id="VcP-NH-8mZ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="8ks-Bc-aAz">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ks-Bc-aAz" id="Kc2-yM-nQf">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="日向" translatesAutoresizingMaskIntoConstraints="NO" id="TrL-aA-MoD">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日向翔陽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t98-bb-9aO">
+                                                    <rect key="frame" x="126" y="50" width="122" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94333755970001221" green="0.80949666410428089" blue="0.6017891794810929" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="gIs-Zb-gcE" kind="show" id="Uaw-XD-mar"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="VJf-xy-jB9">
+                                        <rect key="frame" x="0.0" y="130" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VJf-xy-jB9" id="4oX-OF-rE1">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="影山" translatesAutoresizingMaskIntoConstraints="NO" id="mFV-RJ-PQe">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="影山飛雄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PK1-Sf-C9t">
+                                                    <rect key="frame" x="126" y="50" width="122" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94333755970001221" green="0.80949666410428089" blue="0.6017891794810929" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="itt-gr-fDk" kind="show" id="qo4-ZU-uOm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="04e-UH-6zY">
+                                        <rect key="frame" x="0.0" y="260" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="04e-UH-6zY" id="XDW-uk-okz">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="菅原" translatesAutoresizingMaskIntoConstraints="NO" id="gNR-Rx-41d">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="菅原孝支" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eo-SO-esb">
+                                                    <rect key="frame" x="126" y="50" width="122" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94333755970001221" green="0.80949666410428089" blue="0.6017891794810929" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="8wN-i0-4nS" kind="show" id="HkG-EK-Wee"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="r5D-wQ-5Zw">
+                                        <rect key="frame" x="0.0" y="390" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r5D-wQ-5Zw" id="KMr-Pc-CeY">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="澤村大地" translatesAutoresizingMaskIntoConstraints="NO" id="h9i-Xx-WHR">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="澤村大地" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMt-Zq-f5L">
+                                                    <rect key="frame" x="126" y="50" width="122" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94333755970001221" green="0.80949666410428089" blue="0.6017891794810929" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="ZNi-hk-POV" kind="show" id="cQL-VF-Fz5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="8ii-It-464">
+                                        <rect key="frame" x="0.0" y="520" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ii-It-464" id="eef-aP-rbo">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="西谷" translatesAutoresizingMaskIntoConstraints="NO" id="fRv-GK-ENh">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="西谷夕" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2l-ep-2Oa">
+                                                    <rect key="frame" x="126" y="50" width="91" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94333755970001221" green="0.80949666410428089" blue="0.6017891794810929" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="kc4-Jw-qLs" kind="show" id="1Xi-CD-6oQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="7Em-KX-CKs">
+                                        <rect key="frame" x="0.0" y="650" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Em-KX-CKs" id="LqO-sG-OR7">
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="月島" translatesAutoresizingMaskIntoConstraints="NO" id="lxL-6b-vw7">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="月島螢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjL-Q2-oNY">
+                                                    <rect key="frame" x="126" y="50" width="91" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94333755970001221" green="0.80949666410428089" blue="0.6017891794810929" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="68j-bL-W8R" kind="show" id="mSA-j9-fcv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="6E9-RB-16d">
+                                        <rect key="frame" x="0.0" y="780" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6E9-RB-16d" id="kxX-5O-Vnu">
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="田中" translatesAutoresizingMaskIntoConstraints="NO" id="okb-ZJ-g3w">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="田中龍之介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEA-4G-3GX">
+                                                    <rect key="frame" x="126" y="50" width="152" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94333755970001221" green="0.80949666410428089" blue="0.6017891794810929" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="hQP-fx-k9f" kind="show" id="dvb-G9-jQl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="So9-FP-Qwj">
+                                        <rect key="frame" x="0.0" y="910" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="So9-FP-Qwj" id="QEW-kQ-MGM">
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="東峰" translatesAutoresizingMaskIntoConstraints="NO" id="04s-7s-iju">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="東峰旭" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuo-Ql-PsK">
+                                                    <rect key="frame" x="126" y="50" width="91" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94333755970001221" green="0.80949666410428089" blue="0.6017891794810929" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="oGg-2W-xMm" kind="show" id="nVo-q8-abn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Qpx-Pp-vzt" id="Rpi-4n-8xz"/>
+                            <outlet property="delegate" destination="Qpx-Pp-vzt" id="TbI-w2-BIg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="角色列表" id="Vxf-Ya-rV3"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uge-ew-MZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2874" y="27"/>
+        </scene>
+        <!--日向翔陽-->
+        <scene sceneID="pZC-Hj-2Of">
+            <objects>
+                <viewController title="日向翔陽" id="gIs-Zb-gcE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="54D-kX-UM5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="日向-1" translatesAutoresizingMaskIntoConstraints="NO" id="iqA-cL-crJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="gEL-KE-Wfr"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="烏野「最強的誘餌」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIe-PT-qL6">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cc4-Ic-cZ0">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYq-U8-glr">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="1289"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqX-zU-baA">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="1313"/>
+                                                <mutableString key="text">生日 6月21日 
+身高 1.622公尺（5英尺4英寸）
+體重 51.9 公斤（114 磅） 
+職業 烏野高校一年級一班學生 
+背號 10 
+位置 副攻手 
+喜歡的食物 白飯拌雞蛋 
+最近的煩惱 不能用一隻手抓住球 
+
+因為身高的原因，被其他人稱呼為
+「小不點（チビちゃん）」
+
+擁有超群的反應、速度、彈跳力
+目標是成為烏野高中的王牌
+容易緊張，有點天然呆而率直的性格
+學習方面不是很好
+
+小時候看電視中播放的排球比賽裡面
+全場個子都很高
+唯獨有一名烏野高中的小個子大顯身手
+就像「小巨人」一樣
+因此努力想成為「小巨人」一樣的人
+
+從初中接觸排球
+曾是雪之丘中學三年級的排球社主將
+初一時因為排球社人數不夠
+日向總是一個人練習
+初三時終於有三名初一的成員加入
+日向並邀請好友組成臨時小隊
+參加中學第一次也是最後一次正式比賽
+在比賽中對上強豪
+─ 北川第一中學而落敗
+並在那次比賽中認識影山飛雄
+日向更想在之後的比賽一雪前恥
+巧合地兩人都入讀了烏野高中
+一開始兩人針鋒相對著
+後來兩人慢慢建立互信關係
+更成為最佳組合
+信任著影山的托球
+日向閉眼也能扣殺成功的「怪人快攻」
+在比賽中不斷用快攻迅速得分
+使對手把注意力集中放在日向身上
+讓其他攻手在缺乏防備時活躍起來
+因而被稱為「最強的誘餌」
+
+因為想要變強
+認為只靠閉眼打出的殺球不能進步的
+想要強大得可以靠自己戰鬥
+但影山卻不認同這種想法
+兩人一度發生衝突
+第一次的東京合宿完結後受到
+烏養前教練的指導
+第二次東京合宿中和影山成功做到了
+能在空中有更多擊球點選擇的
+「新怪人快攻」</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="HqX-zU-baA" firstAttribute="top" secondItem="bYq-U8-glr" secondAttribute="top" id="jQL-8P-nNG"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="jXh-DE-GdI"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="1289"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iqA-cL-crJ" firstAttribute="trailing" secondItem="ngh-BA-cGN" secondAttribute="trailing" id="0Jq-zw-ePT"/>
+                            <constraint firstItem="Cc4-Ic-cZ0" firstAttribute="leading" secondItem="ngh-BA-cGN" secondAttribute="leading" constant="10" id="3dD-n1-plG"/>
+                            <constraint firstItem="ngh-BA-cGN" firstAttribute="bottom" secondItem="Cc4-Ic-cZ0" secondAttribute="bottom" constant="5" id="4uj-7R-Dkg"/>
+                            <constraint firstItem="Cc4-Ic-cZ0" firstAttribute="top" secondItem="fIe-PT-qL6" secondAttribute="bottom" constant="5" id="86j-JZ-Bdi"/>
+                            <constraint firstItem="fIe-PT-qL6" firstAttribute="top" secondItem="iqA-cL-crJ" secondAttribute="bottom" constant="15" id="9J1-Xv-YFC"/>
+                            <constraint firstItem="iqA-cL-crJ" firstAttribute="top" secondItem="ngh-BA-cGN" secondAttribute="top" id="ZLj-IW-yU6"/>
+                            <constraint firstItem="iqA-cL-crJ" firstAttribute="leading" secondItem="ngh-BA-cGN" secondAttribute="leading" id="a3E-jL-zor"/>
+                            <constraint firstItem="ngh-BA-cGN" firstAttribute="trailing" secondItem="Cc4-Ic-cZ0" secondAttribute="trailing" constant="10" id="gas-Jg-Jdo"/>
+                            <constraint firstItem="fIe-PT-qL6" firstAttribute="leading" secondItem="ngh-BA-cGN" secondAttribute="leading" constant="10" id="yDQ-Wh-fZH"/>
+                            <constraint firstItem="ngh-BA-cGN" firstAttribute="trailing" secondItem="fIe-PT-qL6" secondAttribute="trailing" constant="75" id="zjL-T0-amS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ngh-BA-cGN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Yq-b1-6Aq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3578" y="-679"/>
+        </scene>
+        <!--烏野高中-->
+        <scene sceneID="rB0-c0-Xjq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dcf-Mt-Dfu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="烏野高中" image="one" id="td3-9U-R62"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aU5-Rw-JwK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YJl-XO-I65"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NqE-kh-bGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045.5999999999999" y="27.436281859070466"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4iW-Sp-eQU">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Tm9-2Q-jJb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CfO-vs-HLM">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dcf-Mt-Dfu" kind="relationship" relationship="viewControllers" id="lx4-u1-gRz"/>
+                        <segue destination="UBp-u3-peH" kind="relationship" relationship="viewControllers" id="cVH-2D-Vv3"/>
+                        <segue destination="OQl-6x-nFC" kind="relationship" relationship="viewControllers" id="bTb-Yu-grp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NA9-Gi-I6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106.40000000000001" y="27.436281859070466"/>
+        </scene>
+        <!--青葉城西-->
+        <scene sceneID="HWZ-iI-D7N">
+            <objects>
+                <viewController id="NKK-r3-XEf" customClass="ViewController" customModule="Demo3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vjh-Sa-6E7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="青葉城西" translatesAutoresizingMaskIntoConstraints="NO" id="Aeh-8T-A1B">
+                                <rect key="frame" x="0.0" y="64" width="375" height="236"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="236" id="7OU-2Z-uIv"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGr-L0-Rrw">
+                                <rect key="frame" x="0.0" y="576" width="375" height="42"/>
+                                <color key="backgroundColor" red="0.67971295118331909" green="0.83928143978118896" blue="0.83137470483779907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="查看人物">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Lbp-il-zg3" kind="show" id="eto-bP-UpY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87d-rd-Cm1">
+                                <rect key="frame" x="23" y="380" width="329.5" height="61"/>
+                                <string key="text">宮城縣內四強的私立高中
+通稱「青城（日語：せいじょう）」
+北川第一中學的大多數選手都進了這間高中</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="saA-mC-lfb" firstAttribute="bottom" secondItem="NGr-L0-Rrw" secondAttribute="bottom" id="02p-6G-454"/>
+                            <constraint firstItem="saA-mC-lfb" firstAttribute="trailing" secondItem="NGr-L0-Rrw" secondAttribute="trailing" id="Abw-Zo-qmZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Aeh-8T-A1B" secondAttribute="trailing" id="DSQ-ko-azU"/>
+                            <constraint firstItem="Aeh-8T-A1B" firstAttribute="top" secondItem="saA-mC-lfb" secondAttribute="top" id="LLF-47-T26"/>
+                            <constraint firstItem="87d-rd-Cm1" firstAttribute="centerX" secondItem="Vjh-Sa-6E7" secondAttribute="centerX" id="Nfa-A7-isI"/>
+                            <constraint firstItem="NGr-L0-Rrw" firstAttribute="leading" secondItem="Vjh-Sa-6E7" secondAttribute="leading" id="eiY-UU-KGz"/>
+                            <constraint firstItem="Aeh-8T-A1B" firstAttribute="leading" secondItem="Vjh-Sa-6E7" secondAttribute="leading" id="jMf-Km-XOk"/>
+                            <constraint firstItem="87d-rd-Cm1" firstAttribute="top" secondItem="Aeh-8T-A1B" secondAttribute="bottom" constant="80" id="zyj-lW-TEV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="saA-mC-lfb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="青葉城西" id="gYd-W8-ca8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCt-f2-1I2" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2016.8" y="769.56521739130437"/>
+        </scene>
+        <!--音駒高中-->
+        <scene sceneID="Yte-8c-9rL">
+            <objects>
+                <viewController id="Idi-8O-Fl5" customClass="ViewController" customModule="Demo3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eDo-rs-ZTR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="音駒" translatesAutoresizingMaskIntoConstraints="NO" id="6Mf-bm-Btx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXh-19-leb">
+                                <rect key="frame" x="0.0" y="576" width="375" height="42"/>
+                                <color key="backgroundColor" red="0.88778996467590332" green="0.30885899066925049" blue="0.38430425524711609" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="查看人物">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WJP-kr-OWs" kind="show" id="Bau-6D-q73"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wx-wR-w0Y">
+                                <rect key="frame" x="22" y="354" width="330" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">東京傳統強隊
+有「貓」之稱，是與烏野高中淵源已久的對手，同為「沒落的強豪」
+即使在全盛時期，烏野也從未贏過音駒
+沒有特別突出的攻擊力或天才型的選手
+但在防守方面毫無漏洞，全隊都很擅於接球</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dXh-19-leb" secondAttribute="trailing" id="2sX-0L-fnB"/>
+                            <constraint firstItem="dXh-19-leb" firstAttribute="leading" secondItem="7Cf-TR-i21" secondAttribute="leading" id="86L-gM-YAQ"/>
+                            <constraint firstItem="7Cf-TR-i21" firstAttribute="bottom" secondItem="dXh-19-leb" secondAttribute="bottom" id="Oac-ik-bzy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7Cf-TR-i21"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="音駒高中" id="Ibs-JS-T25"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sMN-hh-XvK" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2016.8" y="1508.9955022488757"/>
+        </scene>
+        <!--青葉城西-->
+        <scene sceneID="r77-0E-ZY9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UBp-u3-peH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="青葉城西" image="two" id="zVF-KD-uUt"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BjR-FM-f68">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NKK-r3-XEf" kind="relationship" relationship="rootViewController" id="rNC-wA-dCK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lvJ-xg-tEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077.5999999999999" y="769.56521739130437"/>
+        </scene>
+        <!--音駒高中-->
+        <scene sceneID="8e9-WU-EAL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OQl-6x-nFC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="音駒高中" image="three" id="ooh-Ko-ZBI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dbn-AP-Oge">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Idi-8O-Fl5" kind="relationship" relationship="rootViewController" id="srR-1m-dkU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R13-0f-d37" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077.5999999999999" y="1508.9955022488757"/>
+        </scene>
+        <!--影山飛雄-->
+        <scene sceneID="jc2-O4-sEf">
+            <objects>
+                <viewController title="影山飛雄" id="itt-gr-fDk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jRY-27-CUX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="影山1" translatesAutoresizingMaskIntoConstraints="NO" id="gLd-Vb-FA5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="mnU-Wf-4OG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人稱「球場上的帝王」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoM-4Z-91o">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRk-ki-I7t">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9aT-Ou-vQq">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="1289"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fy-aV-8su">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="1265"/>
+                                                <mutableString key="text">生日 12月22日 
+身高 1.806公尺（5英尺11英寸） 
+體重 66.3 公斤（146 磅） 
+職業 烏野高校一年級三班學生 
+背號 9 
+位置 二傳手
+喜歡的食物 豬肉咖哩配溫泉蛋
+最近的煩惱 非常在意自己被動物討厭了
+
+曾是北川第一中學的排球隊舉球員
+人稱「球場上的國王」
+但本人卻十分討厭這名字
+
+擁有超群的球感、控球能力 和敏銳的判決力 從小學二年級開始打排球
+雖然在球場上頭腦很好、很會思考對策 但在學習方面不是很好 
+精準的托球和球感 配合日向的高敏捷性和彈跳力 發揮出高水準的「怪人快攻」 並且只有這兩人的組合才能做到 
+原本報了白鳥澤學院，可惜沒有考上
+認為如果及川徹是縣內最強的二傳手
+那麼超越他的人就是自己
+
+認為舉球員就像支配者
+是隊伍中的指揮官
+因而經常想以個人之力贏得比賽
+只顧自己所追求的實力
+就像暴君一樣的專橫、獨裁
+使其在中學時被人稱之為
+「球場上的王者」
+後來更因為過份自我中心
+令隊友無法忍受，漸漸遠離他
+高中在加入烏野排球社後
+遇上日向和其他可靠部員
+並在前輩的指導下
+日漸了解到一個人的話是贏不了的
+也學會如何配合別人及信賴別人
+放下單獨取勝、自我中心的想法
+逐漸蛻變成為真正的王者
+
+第一次的東京合宿完結後練習了
+「能停下來的托球」
+第二次東京合宿中和日向成功做到了
+「新怪人快攻」
+
+在對上稻荷崎
+最後與翔陽合力攔下「雙胞胎快攻」
+助烏野贏得比賽勝利</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="9fy-aV-8su" firstAttribute="top" secondItem="9aT-Ou-vQq" secondAttribute="top" id="naL-UW-no5"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="AHV-OK-MTU"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="1289"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RoM-4Z-91o" firstAttribute="leading" secondItem="jD0-Gw-T39" secondAttribute="leading" constant="10" id="7gh-Uh-bUg"/>
+                            <constraint firstItem="gLd-Vb-FA5" firstAttribute="trailing" secondItem="jD0-Gw-T39" secondAttribute="trailing" id="9vs-LY-7CK"/>
+                            <constraint firstItem="gLd-Vb-FA5" firstAttribute="leading" secondItem="jD0-Gw-T39" secondAttribute="leading" id="Egj-ux-hPx"/>
+                            <constraint firstItem="jD0-Gw-T39" firstAttribute="bottom" secondItem="hRk-ki-I7t" secondAttribute="bottom" constant="5" id="NpU-Br-U6P"/>
+                            <constraint firstItem="RoM-4Z-91o" firstAttribute="top" secondItem="gLd-Vb-FA5" secondAttribute="bottom" constant="15" id="S8l-A1-kBO"/>
+                            <constraint firstItem="gLd-Vb-FA5" firstAttribute="top" secondItem="jD0-Gw-T39" secondAttribute="top" id="Zcc-GF-TTA"/>
+                            <constraint firstItem="jD0-Gw-T39" firstAttribute="trailing" secondItem="hRk-ki-I7t" secondAttribute="trailing" constant="10" id="Zdo-BS-AEK"/>
+                            <constraint firstItem="jD0-Gw-T39" firstAttribute="trailing" secondItem="RoM-4Z-91o" secondAttribute="trailing" constant="75" id="mfR-1z-wMl"/>
+                            <constraint firstItem="hRk-ki-I7t" firstAttribute="leading" secondItem="jD0-Gw-T39" secondAttribute="leading" constant="10" id="seM-Nx-wQs"/>
+                            <constraint firstItem="hRk-ki-I7t" firstAttribute="top" secondItem="RoM-4Z-91o" secondAttribute="bottom" constant="5" id="vyW-eI-Uf9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jD0-Gw-T39"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D42-JI-jCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4351" y="-680"/>
+        </scene>
+        <!--菅原孝支-->
+        <scene sceneID="bUx-c2-pKV">
+            <objects>
+                <viewController title="菅原孝支" id="8wN-i0-4nS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AJL-eK-9bZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="菅原-1" translatesAutoresizingMaskIntoConstraints="NO" id="iev-ra-yKI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="8Kb-ZC-mzQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="烏野「不屈的二傳手」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikl-fq-M78">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wH4-gT-tAP">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6NY-xW-89C">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="312"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EG7-LG-W2F">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="310.5"/>
+                                                <string key="text">生日	6月13日 
+身高	1.743公尺（5英尺9英寸） 
+體重	63.5 公斤（140 磅） 
+職業	烏野高校三年級四班學生 
+背號	2 
+位置	二傳手
+喜歡的食物 超辣麻婆豆腐
+最近的煩惱 有好多比自己高大的後輩
+有著強大的包容心
+能夠活用大家各自的特色進行攻擊
+但攻擊模式的變化不足
+容易被對手抓到攻擊節奏
+及攔網高度不夠高是他最大的弱點</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="EG7-LG-W2F" firstAttribute="top" secondItem="6NY-xW-89C" secondAttribute="top" id="8Rn-dA-0bx"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="Bmi-ep-wHE"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="312"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ojC-UA-cCX" firstAttribute="trailing" secondItem="wH4-gT-tAP" secondAttribute="trailing" constant="10" id="7cw-Cj-5YC"/>
+                            <constraint firstItem="iev-ra-yKI" firstAttribute="leading" secondItem="ojC-UA-cCX" secondAttribute="leading" id="AfU-Iq-S3G"/>
+                            <constraint firstItem="wH4-gT-tAP" firstAttribute="top" secondItem="Ikl-fq-M78" secondAttribute="bottom" constant="5" id="Fg4-Eh-3ey"/>
+                            <constraint firstItem="ojC-UA-cCX" firstAttribute="bottom" secondItem="wH4-gT-tAP" secondAttribute="bottom" constant="5" id="Fkf-OH-STE"/>
+                            <constraint firstItem="Ikl-fq-M78" firstAttribute="top" secondItem="iev-ra-yKI" secondAttribute="bottom" constant="15" id="KIV-UK-Cbp"/>
+                            <constraint firstItem="iev-ra-yKI" firstAttribute="top" secondItem="ojC-UA-cCX" secondAttribute="top" id="LmI-ks-vrV"/>
+                            <constraint firstItem="ojC-UA-cCX" firstAttribute="trailing" secondItem="Ikl-fq-M78" secondAttribute="trailing" constant="75" id="MNE-cV-s1d"/>
+                            <constraint firstItem="iev-ra-yKI" firstAttribute="trailing" secondItem="ojC-UA-cCX" secondAttribute="trailing" id="aMj-mZ-fYV"/>
+                            <constraint firstItem="wH4-gT-tAP" firstAttribute="leading" secondItem="ojC-UA-cCX" secondAttribute="leading" constant="10" id="djk-eh-TQt"/>
+                            <constraint firstItem="Ikl-fq-M78" firstAttribute="leading" secondItem="ojC-UA-cCX" secondAttribute="leading" constant="10" id="enC-zy-MO9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ojC-UA-cCX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Em-zS-jvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5082" y="-681"/>
+        </scene>
+        <!--澤村大地-->
+        <scene sceneID="jqp-sx-u2y">
+            <objects>
+                <viewController title="澤村大地" id="ZNi-hk-POV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tdK-66-S6J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="澤村1" translatesAutoresizingMaskIntoConstraints="NO" id="pvz-CO-Vzn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="DNL-IJ-D2j"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="烏野「不動的大黑柱」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOK-kk-nrn">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xW3-Rq-lDL">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d15-HN-Wyx">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="312"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Knd-tp-oP7">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="310.5"/>
+                                                <string key="text">生日	12月31日 
+身高	1.778公尺（5英尺10英寸） 
+體重	70.1 公斤（154 磅）
+職業	烏野高校三年級四班學生 
+背號	1 
+位置	主攻手
+喜歡的食物 醬油拉麵
+最近的煩惱 頻繁的夢到教導主任的假髮
+飛起來
+
+雖然平時很溫柔
+但生氣了的話馬上就會翻臉
+超可怕</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Knd-tp-oP7" firstAttribute="top" secondItem="d15-HN-Wyx" secondAttribute="top" id="H4F-ty-spC"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="d4e-Ca-lZ8"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="312"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wyS-hj-4Uf" firstAttribute="trailing" secondItem="xW3-Rq-lDL" secondAttribute="trailing" constant="10" id="0DA-Zr-5f8"/>
+                            <constraint firstItem="wyS-hj-4Uf" firstAttribute="bottom" secondItem="xW3-Rq-lDL" secondAttribute="bottom" constant="5" id="0oT-Pe-tja"/>
+                            <constraint firstItem="pvz-CO-Vzn" firstAttribute="leading" secondItem="wyS-hj-4Uf" secondAttribute="leading" id="E0l-1j-sOy"/>
+                            <constraint firstItem="xW3-Rq-lDL" firstAttribute="top" secondItem="iOK-kk-nrn" secondAttribute="bottom" constant="5" id="K6A-0K-nJN"/>
+                            <constraint firstItem="iOK-kk-nrn" firstAttribute="leading" secondItem="wyS-hj-4Uf" secondAttribute="leading" constant="10" id="Mtk-M8-dYu"/>
+                            <constraint firstItem="pvz-CO-Vzn" firstAttribute="top" secondItem="wyS-hj-4Uf" secondAttribute="top" id="XDc-i0-bqJ"/>
+                            <constraint firstItem="iOK-kk-nrn" firstAttribute="top" secondItem="pvz-CO-Vzn" secondAttribute="bottom" constant="15" id="Yxj-7L-216"/>
+                            <constraint firstItem="wyS-hj-4Uf" firstAttribute="trailing" secondItem="iOK-kk-nrn" secondAttribute="trailing" constant="75" id="eaf-T0-L8J"/>
+                            <constraint firstItem="pvz-CO-Vzn" firstAttribute="trailing" secondItem="wyS-hj-4Uf" secondAttribute="trailing" id="n5t-Sw-F6j"/>
+                            <constraint firstItem="xW3-Rq-lDL" firstAttribute="leading" secondItem="wyS-hj-4Uf" secondAttribute="leading" constant="10" id="sp9-Rx-Eyz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wyS-hj-4Uf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PcO-yn-NN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5852" y="-681"/>
+        </scene>
+        <!--西谷夕-->
+        <scene sceneID="93B-OJ-jRg">
+            <objects>
+                <viewController title="西谷夕" id="kc4-Jw-qLs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wek-in-8Qk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="西谷-1" translatesAutoresizingMaskIntoConstraints="NO" id="I7h-h5-KAv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="kIT-sK-VBQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="烏野的守護神" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT4-hJ-my4">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Pg-lP-1gu">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vhw-oE-Vk0">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="312"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6u-yO-CvL">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="263"/>
+                                                <string key="text">生日	10月10日 
+身高	1.593公尺（5英尺3英寸） 
+體重	51.1 公斤（112 磅） 
+職業	烏野高校二年級三班學生 
+背號	4 
+位置	自由人
+喜歡的食物  蘇打味的嘎哩嘎哩君（日本的一種冰棒） 
+最近的煩惱  沒有
+
+嗓門很大，對自己的身為
+自由球員這件事非常自豪</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="O6u-yO-CvL" firstAttribute="top" secondItem="Vhw-oE-Vk0" secondAttribute="top" id="eOp-QA-gBy"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="VPW-TH-6QN"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="312"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5Pg-lP-1gu" firstAttribute="top" secondItem="rT4-hJ-my4" secondAttribute="bottom" constant="5" id="8h4-qp-Zkp"/>
+                            <constraint firstItem="Ve4-9N-Az1" firstAttribute="trailing" secondItem="rT4-hJ-my4" secondAttribute="trailing" constant="75" id="ByI-eQ-Vk2"/>
+                            <constraint firstItem="rT4-hJ-my4" firstAttribute="top" secondItem="I7h-h5-KAv" secondAttribute="bottom" constant="15" id="Hdk-jq-109"/>
+                            <constraint firstItem="I7h-h5-KAv" firstAttribute="leading" secondItem="Ve4-9N-Az1" secondAttribute="leading" id="S65-y2-gr1"/>
+                            <constraint firstItem="5Pg-lP-1gu" firstAttribute="leading" secondItem="Ve4-9N-Az1" secondAttribute="leading" constant="10" id="Uqc-0U-MLK"/>
+                            <constraint firstItem="I7h-h5-KAv" firstAttribute="top" secondItem="Ve4-9N-Az1" secondAttribute="top" id="YFi-ak-jLp"/>
+                            <constraint firstItem="I7h-h5-KAv" firstAttribute="trailing" secondItem="Ve4-9N-Az1" secondAttribute="trailing" id="lZa-kb-8B5"/>
+                            <constraint firstItem="Ve4-9N-Az1" firstAttribute="trailing" secondItem="5Pg-lP-1gu" secondAttribute="trailing" constant="10" id="onL-LU-XfQ"/>
+                            <constraint firstItem="rT4-hJ-my4" firstAttribute="leading" secondItem="Ve4-9N-Az1" secondAttribute="leading" constant="10" id="syk-BR-KV2"/>
+                            <constraint firstItem="Ve4-9N-Az1" firstAttribute="bottom" secondItem="5Pg-lP-1gu" secondAttribute="bottom" constant="5" id="ucM-u0-WDb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ve4-9N-Az1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bA0-3v-UNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6551" y="-681"/>
+        </scene>
+        <!--月島螢-->
+        <scene sceneID="eZ9-Fd-Lno">
+            <objects>
+                <viewController title="月島螢" id="68j-bL-W8R" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NTK-uh-Pvt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="月島-1" translatesAutoresizingMaskIntoConstraints="NO" id="8MT-Jg-6Z4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="GvF-AL-LFe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="烏野「機智的攔截手」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vr-ep-ms6">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2p-1b-YC5">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ze-Af-2CF">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="290"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTp-s6-Nt4">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="286.5"/>
+                                                <string key="text">生日	9月27日 
+身高	1.883公尺（6英尺2英寸） 
+體重	68.4 公斤（150 磅） 
+職業	烏野高校一年級四班學生 
+背號	11 
+位置	副攻手
+喜歡的食物 草莓蛋糕
+最近的煩惱 就算進了高中也還是有人問
+名字後半怎麼讀
+
+曾被黑尾和木兔叫去幫忙攔網
+並受到黑尾指導相當多的攔網技術</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="cTp-s6-Nt4" firstAttribute="top" secondItem="5ze-Af-2CF" secondAttribute="top" id="DHJ-Jl-rln"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="7a3-bc-Tad"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="290"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2pq-tl-YQ1" firstAttribute="bottom" secondItem="C2p-1b-YC5" secondAttribute="bottom" constant="5" id="E2x-r8-Klp"/>
+                            <constraint firstItem="8MT-Jg-6Z4" firstAttribute="leading" secondItem="2pq-tl-YQ1" secondAttribute="leading" id="FLK-NW-1Jn"/>
+                            <constraint firstItem="2pq-tl-YQ1" firstAttribute="trailing" secondItem="6Vr-ep-ms6" secondAttribute="trailing" constant="75" id="Jvx-5E-rbK"/>
+                            <constraint firstItem="6Vr-ep-ms6" firstAttribute="top" secondItem="8MT-Jg-6Z4" secondAttribute="bottom" constant="15" id="U0S-Lv-Jel"/>
+                            <constraint firstItem="8MT-Jg-6Z4" firstAttribute="trailing" secondItem="2pq-tl-YQ1" secondAttribute="trailing" id="eMB-Ty-OmA"/>
+                            <constraint firstItem="6Vr-ep-ms6" firstAttribute="leading" secondItem="2pq-tl-YQ1" secondAttribute="leading" constant="10" id="tA9-4y-hyv"/>
+                            <constraint firstItem="C2p-1b-YC5" firstAttribute="leading" secondItem="2pq-tl-YQ1" secondAttribute="leading" constant="10" id="tOo-UG-HOQ"/>
+                            <constraint firstItem="C2p-1b-YC5" firstAttribute="top" secondItem="6Vr-ep-ms6" secondAttribute="bottom" constant="5" id="to6-OJ-SZA"/>
+                            <constraint firstItem="8MT-Jg-6Z4" firstAttribute="top" secondItem="2pq-tl-YQ1" secondAttribute="top" id="w1K-eo-I0p"/>
+                            <constraint firstItem="2pq-tl-YQ1" firstAttribute="trailing" secondItem="C2p-1b-YC5" secondAttribute="trailing" constant="10" id="yUv-Cq-dA1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2pq-tl-YQ1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcd-TQ-Bi9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3647" y="27"/>
+        </scene>
+        <!--田中龍之介-->
+        <scene sceneID="uSP-zc-pcH">
+            <objects>
+                <viewController title="田中龍之介" id="hQP-fx-k9f" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I0V-Qb-ca7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田中-1" translatesAutoresizingMaskIntoConstraints="NO" id="JJT-C7-wiy">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="UFa-hf-gil"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="烏野「火爆的攻擊手」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uuv-KI-frD">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGb-iQ-4XQ">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WgY-d2-eny">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="360"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHx-BQ-dYp">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="358.5"/>
+                                                <string key="text">生日 3月3日 
+身高	1.772公尺（5英尺10英寸） 
+體重	 68.8 公斤（151 磅） 
+職業	 烏野高校二年級一班學生 
+背號	 5 
+位置	 主攻手
+喜歡的食物 菠蘿麵包
+最近的煩惱 想告訴似乎在校園裡迷路的
+一年級女生教室在哪裡
+一搭話她就哭了
+
+力量在球隊中僅次於東峰
+是烏野第二強的主攻手
+有著被逼到絕境時也不影響表現的強韌
+抗壓性</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="nHx-BQ-dYp" firstAttribute="top" secondItem="WgY-d2-eny" secondAttribute="top" id="0sU-NK-mDA"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="R86-cL-OsD"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="360"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JJT-C7-wiy" firstAttribute="trailing" secondItem="pjg-XL-Kvl" secondAttribute="trailing" id="5dB-S3-XUu"/>
+                            <constraint firstItem="pjg-XL-Kvl" firstAttribute="trailing" secondItem="eGb-iQ-4XQ" secondAttribute="trailing" constant="10" id="FVa-ud-GZR"/>
+                            <constraint firstItem="uuv-KI-frD" firstAttribute="top" secondItem="JJT-C7-wiy" secondAttribute="bottom" constant="15" id="L9u-QR-Laa"/>
+                            <constraint firstItem="pjg-XL-Kvl" firstAttribute="trailing" secondItem="uuv-KI-frD" secondAttribute="trailing" constant="75" id="O6j-BR-ZZp"/>
+                            <constraint firstItem="pjg-XL-Kvl" firstAttribute="bottom" secondItem="eGb-iQ-4XQ" secondAttribute="bottom" constant="5" id="OYB-xL-h6j"/>
+                            <constraint firstItem="JJT-C7-wiy" firstAttribute="leading" secondItem="pjg-XL-Kvl" secondAttribute="leading" id="SQT-bB-rnB"/>
+                            <constraint firstItem="uuv-KI-frD" firstAttribute="leading" secondItem="pjg-XL-Kvl" secondAttribute="leading" constant="10" id="afo-rs-Vlq"/>
+                            <constraint firstItem="eGb-iQ-4XQ" firstAttribute="leading" secondItem="pjg-XL-Kvl" secondAttribute="leading" constant="10" id="gwn-Xp-jBb"/>
+                            <constraint firstItem="eGb-iQ-4XQ" firstAttribute="top" secondItem="uuv-KI-frD" secondAttribute="bottom" constant="5" id="r9F-5I-sJt"/>
+                            <constraint firstItem="JJT-C7-wiy" firstAttribute="top" secondItem="pjg-XL-Kvl" secondAttribute="top" id="rrd-Z8-9d1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pjg-XL-Kvl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSm-zH-VLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4350" y="27"/>
+        </scene>
+        <!--東峰旭-->
+        <scene sceneID="7LQ-Er-0yb">
+            <objects>
+                <viewController title="東峰旭" id="oGg-2W-xMm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WNb-YR-fEG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="東峰-1" translatesAutoresizingMaskIntoConstraints="NO" id="qWk-Q3-2Qh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="ONi-7y-M6w"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="烏野的「王牌」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-sU-D4X">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fnA-ad-LZk">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0kB-h9-4IQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="360"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6e-k0-vSg">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="358.5"/>
+                                                <string key="text">年齡17
+生日 1月1日
+身高 1.857公尺（6英尺1英寸）
+體重 75.2 公斤（165 磅）
+職業 烏野高校三年級三班學生
+背號 3
+位置 主攻手
+喜歡的食物 豬排拉麵
+最近的煩惱 就算說自己是學生也完全
+沒人相信
+有點怕一年級生
+被同年級女生擅自評價為
+「明明長這樣卻很弱」
+
+與西谷、菅原是要好的拍檔</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="o6e-k0-vSg" firstAttribute="top" secondItem="0kB-h9-4IQ" secondAttribute="top" id="H3L-BY-a5h"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="G6F-Pb-JxA"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="360"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fnA-ad-LZk" firstAttribute="top" secondItem="2kh-sU-D4X" secondAttribute="bottom" constant="5" id="3Hs-LZ-RBl"/>
+                            <constraint firstItem="q4Q-lh-TEF" firstAttribute="bottom" secondItem="fnA-ad-LZk" secondAttribute="bottom" constant="5" id="BYT-zz-RFN"/>
+                            <constraint firstItem="q4Q-lh-TEF" firstAttribute="trailing" secondItem="2kh-sU-D4X" secondAttribute="trailing" constant="75" id="Lnc-nr-f7q"/>
+                            <constraint firstItem="q4Q-lh-TEF" firstAttribute="trailing" secondItem="fnA-ad-LZk" secondAttribute="trailing" constant="10" id="PrF-tQ-hHs"/>
+                            <constraint firstItem="qWk-Q3-2Qh" firstAttribute="trailing" secondItem="q4Q-lh-TEF" secondAttribute="trailing" id="Pus-4q-NiF"/>
+                            <constraint firstItem="qWk-Q3-2Qh" firstAttribute="top" secondItem="q4Q-lh-TEF" secondAttribute="top" id="fse-Bd-1wY"/>
+                            <constraint firstItem="2kh-sU-D4X" firstAttribute="top" secondItem="qWk-Q3-2Qh" secondAttribute="bottom" constant="15" id="gXr-Zv-q1W"/>
+                            <constraint firstItem="fnA-ad-LZk" firstAttribute="leading" secondItem="q4Q-lh-TEF" secondAttribute="leading" constant="10" id="lrL-68-dFm"/>
+                            <constraint firstItem="2kh-sU-D4X" firstAttribute="leading" secondItem="q4Q-lh-TEF" secondAttribute="leading" constant="10" id="oDY-ic-UQO"/>
+                            <constraint firstItem="qWk-Q3-2Qh" firstAttribute="leading" secondItem="q4Q-lh-TEF" secondAttribute="leading" id="zan-te-SkK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q4Q-lh-TEF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WW8-oN-ekq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5081" y="27"/>
+        </scene>
+        <!--角色列表-->
+        <scene sceneID="dxv-E7-oPG">
+            <objects>
+                <tableViewController id="Lbp-il-zg3" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PZH-pP-nHf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.94333755969999999" green="0.80949666409999999" blue="0.60178917949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <sections>
+                            <tableViewSection id="dTU-nG-orJ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="z8C-9Y-PSB">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z8C-9Y-PSB" id="iHl-vE-Ncv">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="及川" translatesAutoresizingMaskIntoConstraints="NO" id="NtL-sW-FQR">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="及川徹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZB-YR-PSO">
+                                                    <rect key="frame" x="126" y="50" width="91" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.68363314867019653" green="0.83521348237991333" blue="0.83529716730117798" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="auy-hM-K9W" kind="show" id="VvH-mx-FYh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="OvN-PH-7xg">
+                                        <rect key="frame" x="0.0" y="130" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OvN-PH-7xg" id="5m0-7h-Px3">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="岩泉" translatesAutoresizingMaskIntoConstraints="NO" id="yN6-dB-f5Q">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="岩泉一" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UB3-zU-AbE">
+                                                    <rect key="frame" x="126" y="50" width="91" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.68363314867019653" green="0.83521348237991333" blue="0.83529716730117798" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="hvA-Hd-1Re" kind="show" id="rbr-eC-b3h"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="ect-jD-Pd3">
+                                        <rect key="frame" x="0.0" y="260" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ect-jD-Pd3" id="zVp-lh-UeM">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="狂犬" translatesAutoresizingMaskIntoConstraints="NO" id="GRo-wj-4KL">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="京谷賢太郎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koo-Vf-K0H">
+                                                    <rect key="frame" x="126" y="50" width="152" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.68363314867019653" green="0.83521348237991333" blue="0.83529716730117798" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="C26-Hm-vS0" kind="show" id="nNr-iA-GUC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Lbp-il-zg3" id="Xnx-3H-zYe"/>
+                            <outlet property="delegate" destination="Lbp-il-zg3" id="vd2-5Q-a4I"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="角色列表" id="ujY-ZP-fXY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Tq-lY-iER" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2873" y="770"/>
+        </scene>
+        <!--岩泉一-->
+        <scene sceneID="IFd-R9-dig">
+            <objects>
+                <viewController title="岩泉一" id="hvA-Hd-1Re" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3va-EN-XXm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="岩泉-1" translatesAutoresizingMaskIntoConstraints="NO" id="r8k-18-Jsh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="fnb-IQ-PcE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="青城的「副主將」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndA-GE-MqE">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lZp-yU-KNH">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQS-Pa-JJJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="505"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sj1-j8-iJw">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="501.5"/>
+                                                <string key="text">性別	男
+身高	1.793米（5英尺10 1⁄2英寸）
+體重	70.2公斤（155英磅）
+出生	6月10日
+職業	青葉城西高中三年級五班學生
+背號	4
+位置	主攻手
+
+北川第一中學出身
+力量型的攻擊手，精神方面也非常強韌
+有著很強抗壓性
+能靠自己把隊伍從崩潰邊緣拉回來
+
+與及川從國小就一起打球
+兩人之間有著深厚的互信關係
+被影山用「阿吽の呼吸」來形容
+兩人的合作關係相當合拍
+不知道出自什麼原因
+對及川的發言相當嚴厲及豪不留情面
+在及川犯蠢的時候
+會使用頭槌跟排球來教訓他</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="sj1-j8-iJw" firstAttribute="top" secondItem="UQS-Pa-JJJ" secondAttribute="top" id="exl-Ol-kJU"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="1AE-mT-Nzg"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="505"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lZp-yU-KNH" firstAttribute="leading" secondItem="XjR-XN-sIw" secondAttribute="leading" constant="10" id="0BB-nh-eBn"/>
+                            <constraint firstItem="ndA-GE-MqE" firstAttribute="leading" secondItem="XjR-XN-sIw" secondAttribute="leading" constant="10" id="2kK-Sw-stO"/>
+                            <constraint firstItem="XjR-XN-sIw" firstAttribute="trailing" secondItem="ndA-GE-MqE" secondAttribute="trailing" constant="75" id="Icb-Ca-I2b"/>
+                            <constraint firstItem="r8k-18-Jsh" firstAttribute="trailing" secondItem="XjR-XN-sIw" secondAttribute="trailing" id="RJj-S2-ry9"/>
+                            <constraint firstItem="ndA-GE-MqE" firstAttribute="top" secondItem="r8k-18-Jsh" secondAttribute="bottom" constant="15" id="STr-uc-658"/>
+                            <constraint firstItem="r8k-18-Jsh" firstAttribute="top" secondItem="XjR-XN-sIw" secondAttribute="top" id="U31-ki-IFk"/>
+                            <constraint firstItem="XjR-XN-sIw" firstAttribute="bottom" secondItem="lZp-yU-KNH" secondAttribute="bottom" constant="5" id="eHh-BC-4i6"/>
+                            <constraint firstItem="r8k-18-Jsh" firstAttribute="leading" secondItem="XjR-XN-sIw" secondAttribute="leading" id="ehE-gv-tvJ"/>
+                            <constraint firstItem="lZp-yU-KNH" firstAttribute="top" secondItem="ndA-GE-MqE" secondAttribute="bottom" constant="5" id="hMt-ii-TUd"/>
+                            <constraint firstItem="XjR-XN-sIw" firstAttribute="trailing" secondItem="lZp-yU-KNH" secondAttribute="trailing" constant="10" id="neK-1G-Bh8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XjR-XN-sIw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gNz-Jd-X9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4350" y="793"/>
+        </scene>
+        <!--及川徹-->
+        <scene sceneID="yZz-pU-gMt">
+            <objects>
+                <viewController title="及川徹" id="auy-hM-K9W" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Ua-Mb-p2l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="及川-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zn6-oC-fXS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="D2t-gf-Cti"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="青城的「主將」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhk-ZY-JiO">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEn-8F-cGy">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OXS-Lh-Hma">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="820"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWR-hv-MQ1">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="811.5"/>
+                                                <mutableString key="text">性別	男
+身高	1.843米（6英尺1⁄2英寸）
+體重	72.2公斤（159英磅）
+出生	7月20日
+職業	青葉城西高中三年級六班學生
+背號	1
+位置	二傳手
+
+咖啡色短髮，排球社主將
+北川第一中學出身
+個性相當惡劣
+有時甚至會以激怒他人為樂
+公式承認的帥哥，很受女孩子們歡迎
+
+是宮城縣第一的二傳手
+牛島若利對他的評價是
+「一個能讓球隊發揮出100%實力的舉球員」
+對天才選手有許多陰影
+時常會在挫折時想到其選手
+但在岩泉的當頭棒喝下
+體悟到了[六人強才是最強]
+
+初中三年級時得到最佳二傳手獎
+善於跳躍發球，不只威力相當強
+控球能精準到無話可說
+曾在比賽中單靠發球就拿下超過5分以上
+相當一場二十五分比賽的20%
+
+與岩泉是從國小的一起打球的兒時玩伴
+暱稱岩泉為「小岩（岩ちゃん）」
+兩人關係友好。因為是影山初中時的前輩
+所以日向曾替他取了「大王殿下」的稱號
+但及川本人似乎不知情
+</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="JWR-hv-MQ1" firstAttribute="top" secondItem="OXS-Lh-Hma" secondAttribute="top" id="Q0M-jI-mzJ"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="ZWF-Mx-wbT"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="820"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zn6-oC-fXS" firstAttribute="top" secondItem="vGJ-uD-XV7" secondAttribute="top" id="Aus-nt-GnB"/>
+                            <constraint firstItem="cEn-8F-cGy" firstAttribute="top" secondItem="bhk-ZY-JiO" secondAttribute="bottom" constant="5" id="Dl1-5k-tRR"/>
+                            <constraint firstItem="Zn6-oC-fXS" firstAttribute="leading" secondItem="vGJ-uD-XV7" secondAttribute="leading" id="MHY-wM-8ki"/>
+                            <constraint firstItem="bhk-ZY-JiO" firstAttribute="leading" secondItem="vGJ-uD-XV7" secondAttribute="leading" constant="10" id="NEC-R6-a7M"/>
+                            <constraint firstItem="Zn6-oC-fXS" firstAttribute="trailing" secondItem="vGJ-uD-XV7" secondAttribute="trailing" id="RQI-dM-ddj"/>
+                            <constraint firstItem="vGJ-uD-XV7" firstAttribute="trailing" secondItem="cEn-8F-cGy" secondAttribute="trailing" constant="10" id="XoS-eP-f38"/>
+                            <constraint firstItem="vGJ-uD-XV7" firstAttribute="bottom" secondItem="cEn-8F-cGy" secondAttribute="bottom" constant="5" id="YUT-MR-ec4"/>
+                            <constraint firstItem="bhk-ZY-JiO" firstAttribute="top" secondItem="Zn6-oC-fXS" secondAttribute="bottom" constant="15" id="aig-ZQ-W77"/>
+                            <constraint firstItem="vGJ-uD-XV7" firstAttribute="trailing" secondItem="bhk-ZY-JiO" secondAttribute="trailing" constant="75" id="rwS-hQ-o6d"/>
+                            <constraint firstItem="cEn-8F-cGy" firstAttribute="leading" secondItem="vGJ-uD-XV7" secondAttribute="leading" constant="10" id="u2W-bS-3JR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vGJ-uD-XV7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8mp-mQ-bcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3646" y="793"/>
+        </scene>
+        <!--京谷賢太郎-->
+        <scene sceneID="nhr-Zr-Kwu">
+            <objects>
+                <viewController title="京谷賢太郎" id="C26-Hm-vS0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cU4-ZS-QtO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="狂犬-1" translatesAutoresizingMaskIntoConstraints="NO" id="5q6-1y-PJ7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="AhR-wX-QKx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="青城的「狂犬」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHP-AY-eCh">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lti-QP-raX">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XK0-TM-K7e">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="460"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kB-Ri-DG2">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="453.5"/>
+                                                <string key="text">身高  178.8cm
+體重  70.8kg
+生日  12月7日
+喜歡的食物  全家便利商店的炸雞
+背號  16
+
+就讀青葉城西高中二年級
+排球社主攻手
+南三中出身，天才型主攻手
+對學長們講話的口氣大多都較衝
+使他與上一屆的三年級關係緊張
+其他二年級也對他敬而遠之
+
+及川稱他為「小狂犬」
+狂犬在日文中與京賢發音相同
+對及川有本能上的警戒
+用賽跑、棒球和扳手腕挑戰岩泉
+但全都落敗
+因此只聽岩泉的話</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="6kB-Ri-DG2" firstAttribute="top" secondItem="XK0-TM-K7e" secondAttribute="top" id="nTM-hk-rYh"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="no7-3V-12g"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="460"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lti-QP-raX" firstAttribute="top" secondItem="DHP-AY-eCh" secondAttribute="bottom" constant="5" id="A7d-ty-rAc"/>
+                            <constraint firstItem="5q6-1y-PJ7" firstAttribute="leading" secondItem="d4y-0L-CpQ" secondAttribute="leading" id="Ipg-ye-PPm"/>
+                            <constraint firstItem="d4y-0L-CpQ" firstAttribute="trailing" secondItem="lti-QP-raX" secondAttribute="trailing" constant="10" id="OnF-qY-oIK"/>
+                            <constraint firstItem="DHP-AY-eCh" firstAttribute="top" secondItem="5q6-1y-PJ7" secondAttribute="bottom" constant="15" id="SCQ-Mr-gdO"/>
+                            <constraint firstItem="d4y-0L-CpQ" firstAttribute="trailing" secondItem="DHP-AY-eCh" secondAttribute="trailing" constant="75" id="TgD-Oq-0XA"/>
+                            <constraint firstItem="DHP-AY-eCh" firstAttribute="leading" secondItem="d4y-0L-CpQ" secondAttribute="leading" constant="10" id="Vu4-X0-bFK"/>
+                            <constraint firstItem="5q6-1y-PJ7" firstAttribute="trailing" secondItem="d4y-0L-CpQ" secondAttribute="trailing" id="gQL-ep-1E6"/>
+                            <constraint firstItem="5q6-1y-PJ7" firstAttribute="top" secondItem="d4y-0L-CpQ" secondAttribute="top" id="ggc-0U-R6o"/>
+                            <constraint firstItem="d4y-0L-CpQ" firstAttribute="bottom" secondItem="lti-QP-raX" secondAttribute="bottom" constant="5" id="mCG-9T-Jbm"/>
+                            <constraint firstItem="lti-QP-raX" firstAttribute="leading" secondItem="d4y-0L-CpQ" secondAttribute="leading" constant="10" id="rOX-nQ-KHw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d4y-0L-CpQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PaJ-vl-HIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5081" y="793"/>
+        </scene>
+        <!--角色列表-->
+        <scene sceneID="h7C-xP-dYt">
+            <objects>
+                <tableViewController id="WJP-kr-OWs" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kp9-ob-2gr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.94333755969999999" green="0.80949666409999999" blue="0.60178917949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <sections>
+                            <tableViewSection id="IcX-bd-JHU">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="LsT-zO-FL4">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LsT-zO-FL4" id="A86-9U-ec6">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="研磨" translatesAutoresizingMaskIntoConstraints="NO" id="6oy-zw-6M1">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="孤爪研磨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yar-0H-2gd">
+                                                    <rect key="frame" x="126" y="50" width="122" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88778996467590332" green="0.6373112842105948" blue="0.63893464411464285" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="eyT-HL-ATh" kind="show" id="GRo-Pf-XZE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="jOI-Dv-W5a">
+                                        <rect key="frame" x="0.0" y="130" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jOI-Dv-W5a" id="bud-mX-1aU">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="黑尾" translatesAutoresizingMaskIntoConstraints="NO" id="gS5-qq-Ob4">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="黑尾鐵朗" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5m-8i-l0P">
+                                                    <rect key="frame" x="126" y="50" width="122" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88778996467590332" green="0.6373112842105948" blue="0.63893464411464285" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="XlF-m0-ndC" kind="show" id="IBb-GG-RAT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="UFJ-Aa-Xpj">
+                                        <rect key="frame" x="0.0" y="260" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UFJ-Aa-Xpj" id="PvZ-8J-fQw">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="夜久" translatesAutoresizingMaskIntoConstraints="NO" id="vR6-ZO-Blb">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="夜久衛輔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddq-9B-zf8">
+                                                    <rect key="frame" x="126" y="50" width="122" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88778996467590332" green="0.6373112842105948" blue="0.63893464411464285" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="vRE-Nt-mH5" kind="show" id="sS2-zS-E5p"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="Qn4-7f-IoY">
+                                        <rect key="frame" x="0.0" y="390" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qn4-7f-IoY" id="dqV-ir-fXX">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="列夫" translatesAutoresizingMaskIntoConstraints="NO" id="sye-0a-MY1">
+                                                    <rect key="frame" x="15" y="11" width="91" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="灰羽列夫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukt-me-xaG">
+                                                    <rect key="frame" x="126" y="50" width="122" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88778996467590332" green="0.6373112842105948" blue="0.63893464411464285" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="BZh-DD-prI" kind="show" id="I42-4S-bSv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="WJP-kr-OWs" id="wc8-Ud-QPq"/>
+                            <outlet property="delegate" destination="WJP-kr-OWs" id="GST-dV-YTO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="角色列表" id="WZY-Kg-Vq2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6j6-Bm-Sth" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2873" y="1509"/>
+        </scene>
+        <!--孤爪研磨-->
+        <scene sceneID="Jm5-Q2-cOu">
+            <objects>
+                <viewController title="孤爪研磨" id="eyT-HL-ATh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hb6-UD-eOk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="研磨-1" translatesAutoresizingMaskIntoConstraints="NO" id="bSY-YX-hbl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="l3D-23-fdR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音駒的「大腦」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qj1-Kg-R1b">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oCz-DD-atg">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXF-Ng-2gh">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="670"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zY5-nQ-3hN">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="668.5"/>
+                                                <mutableString key="text">性別	男
+身高	1.69米（5英尺6 1⁄2英寸）
+體重	58.3公斤（129英磅）
+出生	10月16日
+職業	音駒高中二年級三班學生
+背號	5
+位置	二傳手
+
+就讀音駒高中二年級年三班
+排球社二傳手
+有著出色和敏銳的觀察力
+擅長預測和判斷對方的類型和行動
+喜歡玩掌上遊戲機
+並在上面學到一些理論哲學
+不喜歡運動社團的上下級關係
+沒有特別喜歡打排球
+但打了也不討厭
+只是不喜歡累的感覺
+
+不擅長與人相處，也不想與人扯上關係
+卻很在意他人的眼光
+小時候玩伴只有黑尾鐵朗
+因為黑尾的關係而去打排球
+因在街上迷路而認識了同樣迷路的日向
+並在之後成為好朋友和勁敵
+曾和烏野練習賽比完時
+被影山對自己的碎念問題而嚇到
+食慾很小</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="zY5-nQ-3hN" firstAttribute="top" secondItem="aXF-Ng-2gh" secondAttribute="top" id="5sY-Ur-2NC"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="pSK-1m-JbF"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="670"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2Cw-Aq-j6y" firstAttribute="trailing" secondItem="oCz-DD-atg" secondAttribute="trailing" constant="10" id="664-Kt-7lk"/>
+                            <constraint firstItem="bSY-YX-hbl" firstAttribute="top" secondItem="2Cw-Aq-j6y" secondAttribute="top" id="CSO-Yr-m89"/>
+                            <constraint firstItem="qj1-Kg-R1b" firstAttribute="leading" secondItem="2Cw-Aq-j6y" secondAttribute="leading" constant="10" id="EKS-sd-Fbk"/>
+                            <constraint firstItem="oCz-DD-atg" firstAttribute="leading" secondItem="2Cw-Aq-j6y" secondAttribute="leading" constant="10" id="Kow-gF-jMd"/>
+                            <constraint firstItem="oCz-DD-atg" firstAttribute="top" secondItem="qj1-Kg-R1b" secondAttribute="bottom" constant="5" id="MJR-CB-Q6M"/>
+                            <constraint firstItem="2Cw-Aq-j6y" firstAttribute="bottom" secondItem="oCz-DD-atg" secondAttribute="bottom" constant="5" id="d9L-xb-Fmm"/>
+                            <constraint firstItem="qj1-Kg-R1b" firstAttribute="top" secondItem="bSY-YX-hbl" secondAttribute="bottom" constant="15" id="hvJ-L6-CKJ"/>
+                            <constraint firstItem="bSY-YX-hbl" firstAttribute="leading" secondItem="2Cw-Aq-j6y" secondAttribute="leading" id="tDi-gg-HVa"/>
+                            <constraint firstItem="2Cw-Aq-j6y" firstAttribute="trailing" secondItem="qj1-Kg-R1b" secondAttribute="trailing" constant="75" id="w7w-BG-TeG"/>
+                            <constraint firstItem="bSY-YX-hbl" firstAttribute="trailing" secondItem="2Cw-Aq-j6y" secondAttribute="trailing" id="wTw-GC-3Lc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2Cw-Aq-j6y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ppI-Vu-hTE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3646" y="1509"/>
+        </scene>
+        <!--黑尾鐵朗-->
+        <scene sceneID="vaQ-Ly-JmL">
+            <objects>
+                <viewController title="黑尾鐵朗" id="XlF-m0-ndC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0GM-Lp-56B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="黑尾-1" translatesAutoresizingMaskIntoConstraints="NO" id="l5B-4G-bRc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="8dh-Ug-bxW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音駒的「主將」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHx-Dq-O9a">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ykG-h5-mie">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vHF-Nh-0oK">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="530"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPE-l4-I6m">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="525.5"/>
+                                                <string key="text">性別	男
+身高	1.877米（6英尺2英寸）
+體重	75.3公斤（166英磅）
+出生	11月17日
+職業	音駒高中三年級五班學生
+背號	1
+位置	副攻手
+
+排球社主將，擔任攔網員
+有著一頭極具特色的雞冠頭
+據研磨所說似乎是睡覺時壓出來的
+
+將球隊隊員比喻成是「血液」
+必須要順暢無礙地流動
+輸送氧氣（球）
+讓「腦」（二傳手）正常地運作
+
+擁有優越的攔網觸覺
+以及在攔網中能夠擔當司令塔
+擅於挑釁別人跟戰術配合
+也是少數接球很穩的副攻手
+在合宿期間教導灰羽與月島攔網</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="oPE-l4-I6m" firstAttribute="top" secondItem="vHF-Nh-0oK" secondAttribute="top" id="HMP-FG-sGy"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="O7y-tG-4wV"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="530"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="l5B-4G-bRc" firstAttribute="leading" secondItem="18Z-RR-XCO" secondAttribute="leading" id="0lQ-jF-oWO"/>
+                            <constraint firstItem="18Z-RR-XCO" firstAttribute="bottom" secondItem="ykG-h5-mie" secondAttribute="bottom" constant="5" id="KRi-dU-CPu"/>
+                            <constraint firstItem="ykG-h5-mie" firstAttribute="top" secondItem="KHx-Dq-O9a" secondAttribute="bottom" constant="5" id="MCK-IJ-dwv"/>
+                            <constraint firstItem="18Z-RR-XCO" firstAttribute="trailing" secondItem="KHx-Dq-O9a" secondAttribute="trailing" constant="75" id="PuT-Vb-nVX"/>
+                            <constraint firstItem="18Z-RR-XCO" firstAttribute="trailing" secondItem="ykG-h5-mie" secondAttribute="trailing" constant="10" id="Uvx-Ms-qZU"/>
+                            <constraint firstItem="KHx-Dq-O9a" firstAttribute="leading" secondItem="18Z-RR-XCO" secondAttribute="leading" constant="10" id="V7i-XZ-lbJ"/>
+                            <constraint firstItem="l5B-4G-bRc" firstAttribute="top" secondItem="18Z-RR-XCO" secondAttribute="top" id="VZv-bT-l2x"/>
+                            <constraint firstItem="ykG-h5-mie" firstAttribute="leading" secondItem="18Z-RR-XCO" secondAttribute="leading" constant="10" id="aRD-ve-R6v"/>
+                            <constraint firstItem="l5B-4G-bRc" firstAttribute="trailing" secondItem="18Z-RR-XCO" secondAttribute="trailing" id="mOj-ua-fR9"/>
+                            <constraint firstItem="KHx-Dq-O9a" firstAttribute="top" secondItem="l5B-4G-bRc" secondAttribute="bottom" constant="15" id="wV0-SI-r8W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="18Z-RR-XCO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c93-9c-gRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4350" y="1509"/>
+        </scene>
+        <!--夜久衛輔-->
+        <scene sceneID="E7N-wU-UWU">
+            <objects>
+                <viewController title="夜久衛輔" id="vRE-Nt-mH5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kDz-Yf-ayi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="夜久-1" translatesAutoresizingMaskIntoConstraints="NO" id="x7m-Ue-vHn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="0Cr-BW-cOI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音駒的「自由人」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zye-NJ-dd6">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EMS-Ng-6st">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pe8-2c-0Mp">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="292"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyI-oi-Jp4">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="290"/>
+                                                <string key="text">身高  165.2cm
+體重  60.2kg
+生日  8月8日
+喜歡的東西  炒蔬菜
+
+就讀音駒高中三年級五班
+排球社自由人
+曾因研磨毫不認生的跟日向聊天而感動落淚
+身高是地雷，曾因灰羽不小心踩到
+而對灰羽使出飛踢
+覺得灰羽的姐姐美得讓人一塌糊塗</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="cyI-oi-Jp4" firstAttribute="top" secondItem="pe8-2c-0Mp" secondAttribute="top" id="VGG-EV-tvc"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="k5e-we-Qiy"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="265"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EMS-Ng-6st" firstAttribute="top" secondItem="zye-NJ-dd6" secondAttribute="bottom" constant="5" id="AmP-SD-Mko"/>
+                            <constraint firstItem="zye-NJ-dd6" firstAttribute="top" secondItem="x7m-Ue-vHn" secondAttribute="bottom" constant="15" id="CqC-v0-U4N"/>
+                            <constraint firstItem="1xp-w4-7G1" firstAttribute="trailing" secondItem="zye-NJ-dd6" secondAttribute="trailing" constant="75" id="Ioj-wa-2Nd"/>
+                            <constraint firstItem="EMS-Ng-6st" firstAttribute="leading" secondItem="1xp-w4-7G1" secondAttribute="leading" constant="10" id="LzD-sa-Twz"/>
+                            <constraint firstItem="x7m-Ue-vHn" firstAttribute="leading" secondItem="1xp-w4-7G1" secondAttribute="leading" id="Obe-L5-7d4"/>
+                            <constraint firstItem="x7m-Ue-vHn" firstAttribute="trailing" secondItem="1xp-w4-7G1" secondAttribute="trailing" id="Zec-4a-5be"/>
+                            <constraint firstItem="zye-NJ-dd6" firstAttribute="leading" secondItem="1xp-w4-7G1" secondAttribute="leading" constant="10" id="sop-Jo-Wl1"/>
+                            <constraint firstItem="x7m-Ue-vHn" firstAttribute="top" secondItem="1xp-w4-7G1" secondAttribute="top" id="v4p-ME-pCf"/>
+                            <constraint firstItem="1xp-w4-7G1" firstAttribute="bottom" secondItem="EMS-Ng-6st" secondAttribute="bottom" constant="5" id="vAt-Ei-Oe0"/>
+                            <constraint firstItem="1xp-w4-7G1" firstAttribute="trailing" secondItem="EMS-Ng-6st" secondAttribute="trailing" constant="10" id="z6Z-VU-FyT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1xp-w4-7G1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kjp-W1-Njq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5080.8000000000002" y="1508.9955022488757"/>
+        </scene>
+        <!--灰羽列夫-->
+        <scene sceneID="uLl-lg-PAN">
+            <objects>
+                <viewController title="灰羽列夫" id="BZh-DD-prI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pxR-qE-9nt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="列夫-1" translatesAutoresizingMaskIntoConstraints="NO" id="ALN-Ns-RM7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="Quq-xV-cwb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音駒的「攔網」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6N-KX-njq">
+                                <rect key="frame" x="10" y="293" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.1210072853" blue="0.16957411920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A0d-Q1-La2">
+                                <rect key="frame" x="10" y="321" width="355" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfz-pQ-6bD">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="790"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ba5-Gm-HtS">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="811.5"/>
+                                                <mutableString key="text">性別	男
+物種	日俄混血兒
+身高	1.945米（6英尺4 1⁄2英寸）
+體重	79.7公斤（176英磅）
+出生	10月30日
+職業	音駒高中一年級年三班學生
+背號	11
+位置	副攻手
+
+就讀音駒高中一年級，擔任攔網手
+有著灰銀色短髮，和綠色的瞳孔
+個子很高
+但因駝背所以一開始看不出來
+是日俄混血兒，但因為從小在日本生活
+完全不會講俄語
+
+雖然本身並不討人厭，但講話相當坦率
+而且偶而會坦率過頭
+曾對剛見面的日向說
+「離近看感覺日向又更小了呢」
+利耶夫在俄語中是「獅子」的意思
+有一個姐姐，叫灰羽愛麗莎
+
+研磨對他的評價是
+「從高中才開始打排球
+所以發球跟接球都很弱
+甚至比日向還爛」
+但憑著卓越的身體素質跟身高
+在第一局前半就能適應怪人快攻
+並且把日向的球給攔下來
+
+不喜歡練接球
+曾為了逃避接球練習而裝死
+認為拿下分數最多的人就是王牌</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ba5-Gm-HtS" firstAttribute="top" secondItem="jfz-pQ-6bD" secondAttribute="top" id="GOl-Dd-CL8"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="oUn-10-gUV"/>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="0.0" height="790"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A0d-Q1-La2" firstAttribute="leading" secondItem="CmU-p9-li0" secondAttribute="leading" constant="10" id="3Pu-lw-vyC"/>
+                            <constraint firstItem="CmU-p9-li0" firstAttribute="trailing" secondItem="A0d-Q1-La2" secondAttribute="trailing" constant="10" id="Gop-L0-jaN"/>
+                            <constraint firstItem="ALN-Ns-RM7" firstAttribute="leading" secondItem="CmU-p9-li0" secondAttribute="leading" id="Nwr-MU-3Sp"/>
+                            <constraint firstItem="r6N-KX-njq" firstAttribute="top" secondItem="ALN-Ns-RM7" secondAttribute="bottom" constant="15" id="ORc-Dc-36L"/>
+                            <constraint firstItem="r6N-KX-njq" firstAttribute="leading" secondItem="CmU-p9-li0" secondAttribute="leading" constant="10" id="apk-Mh-RUB"/>
+                            <constraint firstItem="A0d-Q1-La2" firstAttribute="top" secondItem="r6N-KX-njq" secondAttribute="bottom" constant="5" id="bVa-b7-JLe"/>
+                            <constraint firstItem="CmU-p9-li0" firstAttribute="trailing" secondItem="r6N-KX-njq" secondAttribute="trailing" constant="75" id="fP5-sv-bpv"/>
+                            <constraint firstItem="CmU-p9-li0" firstAttribute="bottom" secondItem="A0d-Q1-La2" secondAttribute="bottom" constant="5" id="kIk-RR-Qw2"/>
+                            <constraint firstItem="ALN-Ns-RM7" firstAttribute="trailing" secondItem="CmU-p9-li0" secondAttribute="trailing" id="qne-PB-2Zt"/>
+                            <constraint firstItem="ALN-Ns-RM7" firstAttribute="top" secondItem="CmU-p9-li0" secondAttribute="top" id="zkK-TF-W1v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CmU-p9-li0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oh6-9C-n1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5804" y="1509"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="one" width="24" height="24"/>
+        <image name="three" width="24" height="24"/>
+        <image name="two" width="23" height="23"/>
+        <image name="列夫" width="508" height="764"/>
+        <image name="列夫-1" width="1126" height="664"/>
+        <image name="及川" width="756" height="1042"/>
+        <image name="及川-1" width="1728" height="984"/>
+        <image name="夜久" width="542" height="770"/>
+        <image name="夜久-1" width="1024" height="600"/>
+        <image name="岩泉" width="726" height="1040"/>
+        <image name="岩泉-1" width="1734" height="982"/>
+        <image name="影山" width="484" height="684"/>
+        <image name="影山1" width="1610" height="908"/>
+        <image name="日向" width="630" height="900"/>
+        <image name="日向-1" width="1274" height="720"/>
+        <image name="月島" width="600" height="860"/>
+        <image name="月島-1" width="1152" height="676"/>
+        <image name="東峰" width="776" height="1032"/>
+        <image name="東峰-1" width="1722" height="982"/>
+        <image name="澤村1" width="1440" height="830"/>
+        <image name="澤村大地" width="632" height="868"/>
+        <image name="烏野" width="1264" height="758"/>
+        <image name="狂犬" width="358" height="966"/>
+        <image name="狂犬-1" width="1740" height="988"/>
+        <image name="田中" width="774" height="1028"/>
+        <image name="田中-1" width="1172" height="676"/>
+        <image name="研磨" width="550" height="778"/>
+        <image name="研磨-1" width="1742" height="986"/>
+        <image name="菅原" width="788" height="1064"/>
+        <image name="菅原-1" width="1564" height="918"/>
+        <image name="西谷" width="518" height="636"/>
+        <image name="西谷-1" width="1176" height="662"/>
+        <image name="青葉城西" width="1722" height="1146"/>
+        <image name="音駒" width="952" height="482"/>
+        <image name="黑尾" width="536" height="780"/>
+        <image name="黑尾-1" width="1174" height="660"/>
+    </resources>
 </document>
