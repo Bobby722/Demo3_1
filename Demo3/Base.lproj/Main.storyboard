@@ -36,8 +36,8 @@
                                     <segue destination="Qpx-Pp-vzt" kind="show" id="XfW-2Q-L4C"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3v-HL-zp1">
-                                <rect key="frame" x="49" y="380" width="276" height="101.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3v-HL-zp1">
+                                <rect key="frame" x="49.5" y="380" width="276" height="101.5"/>
                                 <string key="text">位於宮城縣的縣立高中
 曾經有著全國級的實力
 但5年前開始衰退
@@ -51,6 +51,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9gj-57-ODm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4CM-me-a90"/>
+                            <constraint firstItem="v3v-HL-zp1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZKs-JO-5bE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9gj-57-ODm" secondAttribute="trailing" id="cHP-md-sFt"/>
                             <constraint firstItem="v3v-HL-zp1" firstAttribute="top" secondItem="9gj-57-ODm" secondAttribute="bottom" constant="80" id="efR-gX-9Pg"/>
                             <constraint firstItem="9gj-57-ODm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ogg-Ng-WcR"/>
@@ -319,7 +320,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqX-zU-baA">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="1313"/>
-                                                <mutableString key="text">生日 6月21日 
+                                                <string key="text">生日 6月21日 
 身高 1.622公尺（5英尺4英寸）
 體重 51.9 公斤（114 磅） 
 職業 烏野高校一年級一班學生 
@@ -373,7 +374,7 @@
 烏養前教練的指導
 第二次東京合宿中和影山成功做到了
 能在空中有更多擊球點選擇的
-「新怪人快攻」</mutableString>
+「新怪人快攻」</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -438,6 +439,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Tm9-2Q-jJb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CfO-vs-HLM">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -621,7 +623,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fy-aV-8su">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="1265"/>
-                                                <mutableString key="text">生日 12月22日 
+                                                <string key="text">生日 12月22日 
 身高 1.806公尺（5英尺11英寸） 
 體重 66.3 公斤（146 磅） 
 職業 烏野高校一年級三班學生 
@@ -665,7 +667,7 @@
 
 在對上稻荷崎
 最後與翔陽合力攔下「雙胞胎快攻」
-助烏野贏得比賽勝利</mutableString>
+助烏野贏得比賽勝利</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1113,7 +1115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="東峰-1" translatesAutoresizingMaskIntoConstraints="NO" id="qWk-Q3-2Qh">
-                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="214.00000000000023"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="214" id="ONi-7y-M6w"/>
                                 </constraints>
@@ -1296,7 +1298,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="岩泉-1" translatesAutoresizingMaskIntoConstraints="NO" id="r8k-18-Jsh">
-                                <rect key="frame" x="0.0" y="64" width="375" height="214"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="214.00000000000023"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="214" id="fnb-IQ-PcE"/>
                                 </constraints>
@@ -1403,7 +1405,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWR-hv-MQ1">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="811.5"/>
-                                                <mutableString key="text">性別	男
+                                                <string key="text">性別	男
 身高	1.843米（6英尺1⁄2英寸）
 體重	72.2公斤（159英磅）
 出生	7月20日
@@ -1436,7 +1438,7 @@
 兩人關係友好。因為是影山初中時的前輩
 所以日向曾替他取了「大王殿下」的稱號
 但及川本人似乎不知情
-</mutableString>
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1716,7 +1718,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zY5-nQ-3hN">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="668.5"/>
-                                                <mutableString key="text">性別	男
+                                                <string key="text">性別	男
 身高	1.69米（5英尺6 1⁄2英寸）
 體重	58.3公斤（129英磅）
 出生	10月16日
@@ -1743,7 +1745,7 @@
 並在之後成為好朋友和勁敵
 曾和烏野練習賽比完時
 被影山對自己的碎念問題而嚇到
-食慾很小</mutableString>
+食慾很小</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1978,7 +1980,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ba5-Gm-HtS">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="811.5"/>
-                                                <mutableString key="text">性別	男
+                                                <string key="text">性別	男
 物種	日俄混血兒
 身高	1.945米（6英尺4 1⁄2英寸）
 體重	79.7公斤（176英磅）
@@ -2011,7 +2013,7 @@
 
 不喜歡練接球
 曾為了逃避接球練習而裝死
-認為拿下分數最多的人就是王牌</mutableString>
+認為拿下分數最多的人就是王牌</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
